@@ -17,10 +17,9 @@ const Navbar: React.FC<NavbarProps> = ({ activeSection, onNavigate }) => {
     { id: Section.BLOG, label: 'Blog' },
   ];
 
-  // Handle scroll effect for navbar background
   useEffect(() => {
     const handleScroll = () => {
-      setIsScrolled(window.scrollY > 20);
+      setIsScrolled(window.scrollY > 10);
     };
     window.addEventListener('scroll', handleScroll);
     return () => window.removeEventListener('scroll', handleScroll);
@@ -29,10 +28,10 @@ const Navbar: React.FC<NavbarProps> = ({ activeSection, onNavigate }) => {
   return (
     <>
       <header 
-        className={`fixed top-0 left-0 right-0 z-50 transition-all duration-700 ease-in-out border-b border-white/10
+        className={`fixed top-0 left-0 right-0 z-50 transition-all duration-500 ease-in-out border-b
           ${isScrolled 
-            ? 'bg-academic-red/75 backdrop-blur-md shadow-sm py-3' 
-            : 'bg-academic-red/95 backdrop-blur-sm py-6'
+            ? 'bg-academic-red/85 backdrop-blur-lg border-white/5 py-3 shadow-sm' 
+            : 'bg-academic-red/100 border-transparent py-6'
           }
         `}
       >
@@ -42,8 +41,8 @@ const Navbar: React.FC<NavbarProps> = ({ activeSection, onNavigate }) => {
             className="cursor-pointer z-50 group" 
             onClick={() => onNavigate(Section.HOME)}
           >
-            <h1 className={`font-arial-nova text-2xl text-white font-bold tracking-wide whitespace-nowrap group-hover:text-gold-500 transition-all duration-300
-               ${isScrolled ? 'md:text-2xl' : 'md:text-3xl'}
+            <h1 className={`font-arial-nova text-white font-bold tracking-wide whitespace-nowrap group-hover:text-gold-500 transition-all duration-300
+               ${isScrolled ? 'text-xl md:text-2xl' : 'text-2xl md:text-3xl'}
             `}>
               Gepeng Ding
             </h1>
@@ -55,15 +54,14 @@ const Navbar: React.FC<NavbarProps> = ({ activeSection, onNavigate }) => {
               <button
                 key={item.id}
                 onClick={() => onNavigate(item.id)}
-                className={`font-arial-nova text-[15px] uppercase tracking-[0.15em] transition-all duration-300 relative group
+                className={`font-arial-nova text-[14px] uppercase tracking-[0.15em] transition-all duration-300 relative group
                   ${activeSection === item.id 
-                    ? 'text-white font-semibold' 
-                    : 'text-white/80 hover:text-gold-500'
+                    ? 'text-white font-medium' 
+                    : 'text-white/70 hover:text-gold-500'
                   }
                 `}
               >
                 {item.label}
-                {/* Active indicator dot */}
                 <span className={`absolute -bottom-2 left-1/2 -translate-x-1/2 w-1 h-1 rounded-full bg-gold-500 transition-all duration-300 
                   ${activeSection === item.id ? 'opacity-100' : 'opacity-0 group-hover:opacity-100'}`} 
                 />
@@ -83,8 +81,8 @@ const Navbar: React.FC<NavbarProps> = ({ activeSection, onNavigate }) => {
 
       {/* Mobile Full Screen Overlay */}
       <div 
-        className={`fixed inset-0 bg-academic-red/98 backdrop-blur-xl z-40 transition-all duration-500 md:hidden flex flex-col justify-center items-center space-y-10
-          ${isMobileMenuOpen ? 'opacity-100 translate-y-0' : 'opacity-0 -translate-y-10 pointer-events-none'}
+        className={`fixed inset-0 bg-academic-red z-40 transition-all duration-500 md:hidden flex flex-col justify-center items-center space-y-10
+          ${isMobileMenuOpen ? 'opacity-100 visible' : 'opacity-0 invisible pointer-events-none'}
         `}
       >
         {navItems.map((item) => (

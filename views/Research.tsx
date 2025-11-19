@@ -34,11 +34,11 @@ const papers: ResearchPaper[] = [
 
 const Research: React.FC = () => {
   return (
-    <div className="max-w-3xl mx-auto animate-fade-in">
+    <div className="max-w-4xl mx-auto animate-fade-in pb-12">
       <header className="mb-20">
         <div className="w-12 h-1 bg-academic-red mb-8"></div>
-        <h2 className="font-serif text-5xl text-charcoal mb-6">Research</h2>
-        <p className="font-sans text-stone-500 font-light leading-relaxed text-lg max-w-2xl">
+        <h2 className="font-serif text-4xl md:text-5xl text-charcoal mb-6">Research</h2>
+        <p className="font-sans text-stone-500 font-light leading-relaxed text-lg md:text-xl max-w-3xl">
           My work focuses on <span className="text-academic-red font-medium">Human-Computer Interaction</span> and Cognitive Science. 
           I investigate how aesthetic choices in interface design influence cognitive load and emotional trust.
         </p>
@@ -46,30 +46,30 @@ const Research: React.FC = () => {
 
       <div className="space-y-20">
         {papers.map((paper) => (
-          <article key={paper.id} className="group relative pl-0 md:pl-8 border-l border-transparent hover:border-academic-red/40 transition-colors duration-500">
+          <article key={paper.id} className="group relative pl-0 md:pl-8 border-l border-transparent hover:border-academic-red/30 transition-colors duration-500">
             <div className="absolute -left-[5px] top-2 w-2 h-2 bg-academic-red rounded-full opacity-0 group-hover:opacity-100 transition-opacity duration-500 hidden md:block"></div>
             
-            <div className="mb-2 font-sans text-xs uppercase tracking-widest text-academic-red font-semibold">
+            <div className="mb-3 font-sans text-xs uppercase tracking-widest text-academic-red font-semibold">
               {paper.year}
             </div>
             
-            <h3 className="font-serif text-3xl text-charcoal group-hover:text-academic-red transition-colors duration-300">
+            <h3 className="font-serif text-2xl md:text-3xl text-charcoal group-hover:text-academic-red transition-colors duration-300 leading-tight mb-2">
               <a href={paper.link} className="flex items-baseline gap-3">
                 {paper.title}
                 <ArrowUpRight size={20} className="text-academic-red opacity-0 group-hover:opacity-100 transition-opacity duration-300 transform translate-y-1" />
               </a>
             </h3>
             
-            <div className="mt-3 mb-5 font-sans text-xs tracking-wide text-stone-400">
+            <div className="mb-6 font-sans text-sm tracking-wide text-stone-400">
               {paper.conference} <span className="mx-2 text-stone-300">|</span> <span className="text-stone-500 italic">{paper.authors}</span>
             </div>
             
-            <p className="font-serif text-stone-500 leading-8 text-lg opacity-90 max-w-2xl">
+            <p className="font-serif text-stone-600 leading-8 text-lg md:text-xl opacity-90 max-w-3xl">
               {paper.abstract}
             </p>
             
             <div className="mt-6 pt-2">
-               <button className="flex items-center gap-2 text-[10px] font-sans uppercase tracking-[0.2em] text-stone-400 hover:text-academic-red transition-colors">
+               <button className="flex items-center gap-2 text-[11px] font-sans uppercase tracking-[0.2em] text-stone-400 hover:text-academic-red transition-colors">
                   <FileText size={14} /> Abstract PDF
                </button>
             </div>
