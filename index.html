@@ -3,7 +3,7 @@
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Portfolio</title>
+    <title>Gepeng Ding | Portfolio</title>
     <script src="https://cdn.tailwindcss.com"></script>
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
@@ -18,9 +18,8 @@
               'arial-nova': ['"Arial Nova"', '"Helvetica Neue"', 'Arial', 'sans-serif'],
             },
             colors: {
-              paper: '#F2F4F5', // Slightly warmer/cleaner than before for better contrast with Lora
-              charcoal: '#2A2A2A', // Softer black
-              // Academic Red Palette
+              paper: '#F2F4F5',
+              charcoal: '#2A2A2A',
               'academic-red': '#9A1E04',
               'gold': {
                 400: '#EBCB8B',
@@ -76,7 +75,6 @@
           scrollbar-width: none;
       }
       
-      /* Smooth scrolling */
       html {
         scroll-behavior: smooth;
       }
@@ -84,15 +82,18 @@
   <script type="importmap">
 {
   "imports": {
-    "react/": "https://aistudiocdn.com/react@^19.2.0/",
-    "react": "https://aistudiocdn.com/react@^19.2.0",
+    "vite": "https://aistudiocdn.com/vite@^7.2.2",
+    "@vitejs/plugin-react": "https://aistudiocdn.com/@vitejs/plugin-react@^5.1.1",
     "react-dom/": "https://aistudiocdn.com/react-dom@^19.2.0/",
-    "lucide-react": "https://aistudiocdn.com/lucide-react@^0.554.0"
+    "lucide-react": "https://aistudiocdn.com/lucide-react@^0.554.0",
+    "react/": "https://aistudiocdn.com/react@^19.2.0/",
+    "react": "https://aistudiocdn.com/react@^19.2.0"
   }
 }
 </script>
 </head>
   <body class="paper-texture">
     <div id="root"></div>
+    <script type="module" src="/index.tsx"></script>
   </body>
 </html>
