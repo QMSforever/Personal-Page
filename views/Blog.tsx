@@ -47,19 +47,19 @@ const Blog: React.FC = () => {
 
       <div className="space-y-4">
         {posts.map((post) => (
-          <div key={post.id} className="group py-10 border-b border-stone-200/40 hover:border-academic-red/30 transition-colors duration-500 cursor-pointer">
+          <div key={post.id} className="group py-10 border-b border-stone-200/40 hover:border-gold-500/30 transition-colors duration-500 cursor-pointer">
             <div className="flex flex-col md:flex-row gap-3 md:gap-12 items-baseline">
               <span className="font-sans text-xs text-academic-red font-semibold uppercase tracking-widest w-28 shrink-0 pt-1">
                 {post.date}
               </span>
               <div className="flex-1">
-                <h3 className="font-serif text-2xl md:text-3xl text-charcoal mb-3 group-hover:text-academic-red transition-colors duration-300 leading-tight">
+                <h3 className="font-serif text-2xl md:text-3xl text-charcoal mb-3 group-hover:text-gold-500 transition-colors duration-300 leading-tight">
                   {post.title}
                 </h3>
                 <p className="font-serif text-stone-500 text-lg md:text-xl leading-relaxed mb-5 opacity-90 group-hover:opacity-100 max-w-2xl">
                   {post.excerpt}
                 </p>
-                <span className="font-sans text-[11px] text-academic-red uppercase tracking-widest opacity-0 group-hover:opacity-100 transition-all duration-500 transform translate-y-2 group-hover:translate-y-0 font-bold flex items-center gap-2">
+                <span className="font-sans text-[11px] text-gold-500 uppercase tracking-widest opacity-0 group-hover:opacity-100 transition-all duration-500 transform translate-y-2 group-hover:translate-y-0 font-bold flex items-center gap-2">
                    Read Entry <span className="text-lg leading-none">&rarr;</span>
                 </span>
               </div>

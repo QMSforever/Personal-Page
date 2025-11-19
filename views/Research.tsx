@@ -46,17 +46,17 @@ const Research: React.FC = () => {
 
       <div className="space-y-20">
         {papers.map((paper) => (
-          <article key={paper.id} className="group relative pl-0 md:pl-8 border-l border-transparent hover:border-academic-red/30 transition-colors duration-500">
-            <div className="absolute -left-[5px] top-2 w-2 h-2 bg-academic-red rounded-full opacity-0 group-hover:opacity-100 transition-opacity duration-500 hidden md:block"></div>
+          <article key={paper.id} className="group relative pl-0 md:pl-8 border-l border-transparent hover:border-gold-500/30 transition-colors duration-500">
+            <div className="absolute -left-[5px] top-2 w-2 h-2 bg-gold-500 rounded-full opacity-0 group-hover:opacity-100 transition-opacity duration-500 hidden md:block"></div>
             
             <div className="mb-3 font-sans text-xs uppercase tracking-widest text-academic-red font-semibold">
               {paper.year}
             </div>
             
-            <h3 className="font-serif text-2xl md:text-3xl text-charcoal group-hover:text-academic-red transition-colors duration-300 leading-tight mb-2">
+            <h3 className="font-serif text-2xl md:text-3xl text-charcoal group-hover:text-gold-500 transition-colors duration-300 leading-tight mb-2">
               <a href={paper.link} className="flex items-baseline gap-3">
                 {paper.title}
-                <ArrowUpRight size={20} className="text-academic-red opacity-0 group-hover:opacity-100 transition-opacity duration-300 transform translate-y-1" />
+                <ArrowUpRight size={20} className="text-gold-500 opacity-0 group-hover:opacity-100 transition-opacity duration-300 transform translate-y-1" />
               </a>
             </h3>
             
@@ -69,7 +69,7 @@ const Research: React.FC = () => {
             </p>
             
             <div className="mt-6 pt-2">
-               <button className="flex items-center gap-2 text-[11px] font-sans uppercase tracking-[0.2em] text-stone-400 hover:text-academic-red transition-colors">
+               <button className="flex items-center gap-2 text-[11px] font-sans uppercase tracking-[0.2em] text-stone-400 hover:text-gold-500 transition-colors">
                   <FileText size={14} /> Abstract PDF
                </button>
             </div>
@@ -79,7 +79,7 @@ const Research: React.FC = () => {
       
       <div className="mt-32 pt-12 border-t border-stone-200/60 text-center">
         <p className="font-serif text-stone-400 italic text-lg">
-          View full bibliography on <a href="#" className="text-academic-red underline decoration-academic-red/30 hover:decoration-academic-red underline-offset-4 transition-all">Google Scholar</a>.
+          View full bibliography on <a href="#" className="text-academic-red underline decoration-academic-red/30 hover:decoration-gold-500 hover:text-gold-500 underline-offset-4 transition-all">Google Scholar</a>.
         </p>
       </div>
     </div>

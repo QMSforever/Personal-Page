@@ -43,7 +43,7 @@ const Home: React.FC = () => {
               href="https://github.com/QMSforever" 
               target="_blank" 
               rel="noopener noreferrer" 
-              className="text-stone-400 hover:text-academic-red hover:scale-110 transition-all duration-300"
+              className="text-stone-400 hover:text-gold-500 hover:scale-110 transition-all duration-300"
               aria-label="Github"
             >
               <Github size={22} strokeWidth={1.5} />
@@ -52,14 +52,14 @@ const Home: React.FC = () => {
               href="https://www.linkedin.com/in/gp714/" 
               target="_blank" 
               rel="noopener noreferrer" 
-              className="text-stone-400 hover:text-academic-red hover:scale-110 transition-all duration-300"
+              className="text-stone-400 hover:text-gold-500 hover:scale-110 transition-all duration-300"
               aria-label="LinkedIn"
             >
               <Linkedin size={22} strokeWidth={1.5} />
             </a>
             <a 
               href="mailto:gepengd@stanford.edu" 
-              className="text-stone-400 hover:text-academic-red hover:scale-110 transition-all duration-300"
+              className="text-stone-400 hover:text-gold-500 hover:scale-110 transition-all duration-300"
               aria-label="Email"
             >
               <Mail size={22} strokeWidth={1.5} />
@@ -76,7 +76,7 @@ const Home: React.FC = () => {
             </h1>
             
             <h2 className="font-serif text-3xl md:text-4xl leading-tight text-charcoal font-medium mb-6">
-              I am a Research Associate at <a href="https://fsi.stanford.edu/" target="_blank" rel="noopener noreferrer" className="decoration-stone-300/60 underline hover:decoration-academic-red text-charcoal hover:text-academic-red transition-all duration-300 underline-offset-4">
+              I am a Research Associate at <a href="https://fsi.stanford.edu/" target="_blank" rel="noopener noreferrer" className="decoration-stone-300/60 underline hover:decoration-gold-500 text-charcoal hover:text-gold-500 transition-all duration-300 underline-offset-4">
                 Stanford FSI
               </a>.
             </h2>
