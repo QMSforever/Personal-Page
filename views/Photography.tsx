@@ -44,7 +44,7 @@ const Photography: React.FC = () => {
       </div>
       
       <div className="mt-24 flex justify-center">
-          <button className="font-sans text-xs uppercase tracking-widest text-stone-400 hover:text-stone-800 transition-colors">
+          <button className="font-sans text-xs uppercase tracking-widest text-stone-400 hover:text-academic-red transition-colors">
             View Archive
           </button>
       </div>
