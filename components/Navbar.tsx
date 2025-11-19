@@ -31,8 +31,8 @@ const Navbar: React.FC<NavbarProps> = ({ activeSection, onNavigate }) => {
       <header 
         className={`fixed top-0 left-0 right-0 z-50 transition-all duration-700 ease-in-out border-b border-white/10
           ${isScrolled 
-            ? 'bg-academic-red/95 backdrop-blur-md shadow-lg py-4' 
-            : 'bg-academic-red/90 backdrop-blur-sm py-6'
+            ? 'bg-academic-red/75 backdrop-blur-md shadow-sm py-3' 
+            : 'bg-academic-red/95 backdrop-blur-sm py-6'
           }
         `}
       >
@@ -42,7 +42,9 @@ const Navbar: React.FC<NavbarProps> = ({ activeSection, onNavigate }) => {
             className="cursor-pointer z-50 group" 
             onClick={() => onNavigate(Section.HOME)}
           >
-            <h1 className="font-arial-nova text-2xl md:text-3xl text-white font-bold tracking-wide whitespace-nowrap group-hover:text-gold-500 transition-colors duration-300">
+            <h1 className={`font-arial-nova text-2xl text-white font-bold tracking-wide whitespace-nowrap group-hover:text-gold-500 transition-all duration-300
+               ${isScrolled ? 'md:text-2xl' : 'md:text-3xl'}
+            `}>
               Gepeng Ding
             </h1>
           </div>
@@ -56,7 +58,7 @@ const Navbar: React.FC<NavbarProps> = ({ activeSection, onNavigate }) => {
                 className={`font-arial-nova text-[15px] uppercase tracking-[0.15em] transition-all duration-300 relative group
                   ${activeSection === item.id 
                     ? 'text-white font-semibold' 
-                    : 'text-white/70 hover:text-gold-500'
+                    : 'text-white/80 hover:text-gold-500'
                   }
                 `}
               >
@@ -71,10 +73,10 @@ const Navbar: React.FC<NavbarProps> = ({ activeSection, onNavigate }) => {
 
           {/* Mobile Menu Toggle */}
           <button 
-            className="md:hidden z-50 text-white/80 hover:text-white transition-colors p-2"
+            className="md:hidden z-50 text-white/90 hover:text-white transition-colors p-2"
             onClick={() => setIsMobileMenuOpen(!isMobileMenuOpen)}
           >
-            {isMobileMenuOpen ? <X size={26} /> : <Menu size={26} />}
+            {isMobileMenuOpen ? <X size={24} /> : <Menu size={24} />}
           </button>
         </div>
       </header>
@@ -92,7 +94,7 @@ const Navbar: React.FC<NavbarProps> = ({ activeSection, onNavigate }) => {
               onNavigate(item.id);
               setIsMobileMenuOpen(false);
             }}
-            className="font-arial-nova text-4xl text-white/90 hover:text-gold-500 transition-colors font-light"
+            className="font-arial-nova text-3xl text-white/90 hover:text-gold-500 transition-colors font-light uppercase tracking-widest"
           >
             {item.label}
           </button>

@@ -43,9 +43,9 @@ const Sidebar: React.FC<SidebarProps> = ({ activeSection, onNavigate }) => {
       {/* Footer / Socials */}
       <div className="space-y-8">
         <div className="flex space-x-4 text-stone-400">
-          <a href="#" className="hover:text-gold-500 transition-colors duration-300"><Github size={20} strokeWidth={1.5} /></a>
-          <a href="#" className="hover:text-gold-500 transition-colors duration-300"><Linkedin size={20} strokeWidth={1.5} /></a>
-          <a href="#" className="hover:text-gold-500 transition-colors duration-300"><Mail size={20} strokeWidth={1.5} /></a>
+          <a href="https://github.com/QMSforever" target="_blank" rel="noopener noreferrer" className="hover:text-gold-500 transition-colors duration-300"><Github size={20} strokeWidth={1.5} /></a>
+          <a href="https://www.linkedin.com/in/gp714/" target="_blank" rel="noopener noreferrer" className="hover:text-gold-500 transition-colors duration-300"><Linkedin size={20} strokeWidth={1.5} /></a>
+          <a href="mailto:gepengd@stanford.edu" className="hover:text-gold-500 transition-colors duration-300"><Mail size={20} strokeWidth={1.5} /></a>
         </div>
         
         <p className="text-[9px] font-sans text-stone-300 uppercase tracking-widest">

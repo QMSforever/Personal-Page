@@ -9,9 +9,9 @@ const Footer: React.FC = () => {
         <div className="w-px h-12 bg-stone-300/50"></div>
         
         <div className="flex space-x-8 text-stone-400">
-          <a href="#" className="hover:text-academic-red transition-colors duration-500 hover:-translate-y-1 transform"><Github size={22} strokeWidth={1.5} /></a>
-          <a href="#" className="hover:text-academic-red transition-colors duration-500 hover:-translate-y-1 transform"><Linkedin size={22} strokeWidth={1.5} /></a>
-          <a href="#" className="hover:text-academic-red transition-colors duration-500 hover:-translate-y-1 transform"><Mail size={22} strokeWidth={1.5} /></a>
+          <a href="https://github.com/QMSforever" target="_blank" rel="noopener noreferrer" className="hover:text-academic-red transition-colors duration-500 hover:-translate-y-1 transform"><Github size={22} strokeWidth={1.5} /></a>
+          <a href="https://www.linkedin.com/in/gp714/" target="_blank" rel="noopener noreferrer" className="hover:text-academic-red transition-colors duration-500 hover:-translate-y-1 transform"><Linkedin size={22} strokeWidth={1.5} /></a>
+          <a href="mailto:gepengd@stanford.edu" className="hover:text-academic-red transition-colors duration-500 hover:-translate-y-1 transform"><Mail size={22} strokeWidth={1.5} /></a>
         </div>
         
         <p className="text-[10px] font-sans text-stone-300 uppercase tracking-[0.2em]">
