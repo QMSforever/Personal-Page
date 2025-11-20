@@ -13,6 +13,7 @@ const Navbar: React.FC<NavbarProps> = ({ activeSection, onNavigate }) => {
 
   const navItems = [
     { id: Section.RESEARCH, label: 'Research' },
+    { id: Section.CV, label: 'CV' },
     { id: Section.PHOTOGRAPHY, label: 'Photography' },
     { id: Section.BLOG, label: 'Blog' },
   ];

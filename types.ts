@@ -1,6 +1,7 @@
 export enum Section {
   HOME = 'Home',
   RESEARCH = 'Research',
+  CV = 'CV',
   PHOTOGRAPHY = 'Photography',
   BLOG = 'Blog',
 }

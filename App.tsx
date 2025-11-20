@@ -5,6 +5,7 @@ import Home from './views/Home';
 import Research from './views/Research';
 import Photography from './views/Photography';
 import Blog from './views/Blog';
+import CV from './views/CV';
 import { Section } from './types';
 
 const App: React.FC = () => {
@@ -21,6 +22,8 @@ const App: React.FC = () => {
         return <Home />;
       case Section.RESEARCH:
         return <Research />;
+      case Section.CV:
+        return <CV />;
       case Section.PHOTOGRAPHY:
         return <Photography />;
       case Section.BLOG:

@@ -35,7 +35,7 @@ const Home: React.FC = () => {
             <div className="absolute top-3 -left-3 w-full h-full border-2 border-stone-200 rounded-sm -z-10 group-hover:top-2 group-hover:-left-2 transition-all duration-500"></div>
             
             <img 
-              src="https://drive.google.com/thumbnail?id=1kYinauduIItf6hTxABNFkm5Nt-8qV2jw&sz=w1000"
+              src="https://drive.google.com/thumbnail?id=1j3DZWbPbqJ_cxUSKTuCaF0Njf86C6H2y&sz=w1000"
               alt="Gepeng Ding" 
               onError={handleImageError}
               className="relative w-full h-auto aspect-[3/4] object-cover rounded-sm shadow-md hover:shadow-lg transition-all duration-500 ease-out grayscale-[15%] hover:grayscale-0 bg-stone-200"
@@ -89,10 +89,10 @@ const Home: React.FC = () => {
           
           <div className="font-serif text-lg md:text-xl text-stone-600 leading-relaxed space-y-6 text-justify opacity-90">
             <p>
-              My research focuses on the intersection of international security, technology policy, and data analysis. I explore how digital tools shape global narratives and influence decision-making processes in an increasingly interconnected world.
+              My research examines how subnational institutions and state capital shape technological innovation and entrepreneurial finance.
             </p>
             <p>
-              Currently, I am investigating the dynamics of information flow during geopolitical crises, using computational methods to understand sentiment and propaganda at scale. My goal is to bridge the gap between technical data science and qualitative policy analysis.
+              Currently,  I study the evolving role of Chinese local government financing vehicles and their equity relationship with state-backed venture capital funds, using mixed empirical strategies and large-scale data to understand how public and private capital jointly influence firm-level innovation outcomes.
             </p>
           </div>
 
