@@ -117,7 +117,7 @@ const Home: React.FC = () => {
           {/* Personal Bio - Helvetica font */}
           <div className="font-helvetica font-light text-lg md:text-xl text-gray-800 leading-relaxed space-y-6 text-justify">
              <p>
-                My hometown is <a href="https://en.wikipedia.org/wiki/Lanzhou" target="_blank" rel="noopener noreferrer" className={linkClass}>Lanzhou</a>, China, where I spent my first eighteen years. Before coming to Stanford, I studied Astrophysics and Politics at UC Santa Cruz. I enjoy playing grand strategy games such as <a href="https://www.paradoxinteractive.com/games/victoria-3/about" target="_blank" rel="noopener noreferrer" className={linkClass}>Victoria 3</a>, practicing photography and mixology, and exploring unfamiliar cities with no set itinerary.
+                My hometown is <a href="https://en.wikipedia.org/wiki/Lanzhou" target="_blank" rel="noopener noreferrer" className={linkClass}>Lanzhou</a>, China, where I spent my first eighteen years. Prior to my journey at Stanford, I completed my undergraduate studies in Astrophysics and Politics at UC Santa Cruz. Outside of academics, I enjoy video games, especially grand strategy games such as <a href="https://www.paradoxinteractive.com/games/victoria-3/about" target="_blank" rel="noopener noreferrer" className={linkClass}>Victoria 3</a>, practicing photography and mixology, and exploring unfamiliar cities with no set itinerary.
              </p>
           </div>
       </div>
