@@ -38,7 +38,7 @@ const Research: React.FC = () => {
       <header className="mb-20">
         <div className="w-12 h-1 bg-academic-red mb-8"></div>
         <h2 className="font-serif text-4xl md:text-5xl text-charcoal mb-6">Research</h2>
-        <p className="font-sans text-stone-500 font-light leading-relaxed text-lg md:text-xl max-w-3xl">
+        <p className="font-helvetica text-stone-500 font-light leading-relaxed text-lg md:text-xl max-w-3xl">
           My work focuses on <span className="text-academic-red font-medium">Human-Computer Interaction</span> and Cognitive Science. 
           I investigate how aesthetic choices in interface design influence cognitive load and emotional trust.
         </p>
@@ -49,7 +49,7 @@ const Research: React.FC = () => {
           <article key={paper.id} className="group relative pl-0 md:pl-8 border-l border-transparent hover:border-gold-500/30 transition-colors duration-500">
             <div className="absolute -left-[5px] top-2 w-2 h-2 bg-gold-500 rounded-full opacity-0 group-hover:opacity-100 transition-opacity duration-500 hidden md:block"></div>
             
-            <div className="mb-3 font-sans text-xs uppercase tracking-widest text-academic-red font-semibold">
+            <div className="mb-3 font-helvetica text-xs uppercase tracking-widest text-academic-red font-semibold">
               {paper.year}
             </div>
             
@@ -60,16 +60,16 @@ const Research: React.FC = () => {
               </a>
             </h3>
             
-            <div className="mb-6 font-sans text-sm tracking-wide text-stone-400">
+            <div className="mb-6 font-helvetica text-sm tracking-wide text-stone-400">
               {paper.conference} <span className="mx-2 text-stone-300">|</span> <span className="text-stone-500 italic">{paper.authors}</span>
             </div>
             
-            <p className="font-serif text-stone-600 leading-8 text-lg md:text-xl opacity-90 max-w-3xl">
+            <p className="font-helvetica text-stone-600 leading-8 text-lg md:text-xl opacity-90 max-w-3xl">
               {paper.abstract}
             </p>
             
             <div className="mt-6 pt-2">
-               <button className="flex items-center gap-2 text-[11px] font-sans uppercase tracking-[0.2em] text-stone-400 hover:text-gold-500 transition-colors">
+               <button className="flex items-center gap-2 text-[11px] font-helvetica uppercase tracking-[0.2em] text-stone-400 hover:text-gold-500 transition-colors">
                   <FileText size={14} /> Abstract PDF
                </button>
             </div>
@@ -78,7 +78,7 @@ const Research: React.FC = () => {
       </div>
       
       <div className="mt-32 pt-12 border-t border-stone-200/60 text-center">
-        <p className="font-serif text-stone-400 italic text-lg">
+        <p className="font-helvetica text-stone-400 italic text-lg">
           View full bibliography on <a href="#" className="text-academic-red underline decoration-academic-red/30 hover:decoration-gold-500 hover:text-gold-500 underline-offset-4 transition-all">Google Scholar</a>.
         </p>
       </div>

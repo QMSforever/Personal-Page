@@ -15,38 +15,41 @@ const Photography: React.FC = () => {
        <header className="mb-12 flex flex-col md:flex-row md:items-end justify-between gap-6">
         <div>
           <h2 className="font-serif text-4xl text-charcoal mb-2">Photography</h2>
-          <p className="font-sans text-xs text-stone-400 uppercase tracking-widest">Analog & Digital / 35mm</p>
+          <p className="font-helvetica text-xs text-stone-400 uppercase tracking-widest">Analog & Digital / 35mm</p>
         </div>
-        <p className="font-serif text-stone-500 italic text-right max-w-xs">
+        <p className="font-helvetica text-stone-500 italic text-right max-w-xs">
           "To photograph is to hold one's breath, when all faculties converge to capture fleeting reality."
         </p>
       </header>
 
-      {/* Grid Layout - More robust than columns for visibility */}
+      {/* Grid Layout */}
       <div className="grid grid-cols-1 md:grid-cols-2 gap-8">
         {photos.map((photo) => (
           <div key={photo.id} className="group cursor-zoom-in">
-            {/* Image Container with explicit aspect ratio class to prevent collapse */}
-            <div className={`relative overflow-hidden bg-stone-200 w-full ${photo.aspect === 'portrait' ? 'aspect-[3/4]' : 'aspect-[4/3]'}`}>
+            {/* 
+                Removed forced aspect ratio classes (aspect-[3/4]).
+                Changed img to h-auto to respect intrinsic dimensions.
+            */}
+            <div className="relative overflow-hidden bg-stone-200 w-full rounded-sm">
               <img 
                 src={photo.url} 
                 alt={photo.title}
                 onError={handleImageError}
-                className="absolute inset-0 w-full h-full object-cover grayscale-[20%] hover:grayscale-0 hover:scale-[1.05] transition-all duration-700 ease-out"
+                className="w-full h-auto block grayscale-[20%] group-hover:grayscale-0 group-hover:scale-[1.03] transition-all duration-700 ease-out"
                 loading="lazy"
               />
-              <div className="absolute inset-0 bg-black/0 group-hover:bg-black/10 transition-colors duration-500"></div>
+              <div className="absolute inset-0 bg-black/0 group-hover:bg-black/10 transition-colors duration-500 pointer-events-none"></div>
             </div>
             <div className="mt-3 flex justify-between items-center">
               <span className="font-serif text-lg italic text-charcoal opacity-80 group-hover:opacity-100 transition-opacity duration-300">{photo.title}</span>
-              <span className="font-sans text-[10px] text-stone-400 uppercase tracking-wider opacity-60 group-hover:opacity-100 transition-opacity duration-300">ISO 400</span>
+              <span className="font-helvetica text-[10px] text-stone-400 uppercase tracking-wider opacity-60 group-hover:opacity-100 transition-opacity duration-300">ISO 400</span>
             </div>
           </div>
         ))}
       </div>
       
       <div className="mt-24 flex justify-center">
-          <button className="font-sans text-xs uppercase tracking-widest text-stone-400 hover:text-gold-500 transition-colors">
+          <button className="font-helvetica text-xs uppercase tracking-widest text-stone-400 hover:text-gold-500 transition-colors">
             View Archive
           </button>
       </div>

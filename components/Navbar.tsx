@@ -57,8 +57,8 @@ const Navbar: React.FC<NavbarProps> = ({ activeSection, onNavigate }) => {
                 onClick={() => onNavigate(item.id)}
                 className={`font-arial-nova text-[14px] uppercase tracking-[0.15em] transition-all duration-300 relative group
                   ${activeSection === item.id 
-                    ? 'text-white font-medium' 
-                    : 'text-white/70 hover:text-gold-500'
+                    ? 'text-white font-bold' 
+                    : 'text-white/70 font-medium hover:text-gold-500'
                   }
                 `}
               >

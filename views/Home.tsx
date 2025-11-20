@@ -4,11 +4,13 @@ import { Linkedin, Mail, Github } from 'lucide-react';
 // Feature image from Google Drive
 // Using the thumbnail endpoint (sz=w2560 asks for a high-res version) is more reliable for hotlinking than export=view
 const featureImages = [
-  { url: 'https://drive.google.com/thumbnail?id=1cVz-3GXh1Sp3r3zNWF8W-sQoAlcTJfPG&sz=w2560', caption: 'Featured Work' },
+  { url: 'https://drive.google.com/thumbnail?id=1cVz-3GXh1Sp3r3zNWF8W-sQoAlcTJfPG&sz=w2560', caption: 'Perú' },
+  { url: 'https://drive.google.com/thumbnail?id=1TKcmCYOPsAnHbNnQrj6LjHpGdeWIluO3&sz=w2560', caption: 'Iceland' },
+  { url: 'https://drive.google.com/thumbnail?id=1_sChJsNfKnvu_JomHmmJLohNecKk2BqR&sz=w2560', caption: 'Santa Cruz' },
 ];
 
 const Home: React.FC = () => {
-  // Select one image (deterministic since we only have one now)
+  // Select one image (deterministic for the session)
   const dailyImage = useMemo(() => {
     const randomIndex = Math.floor(Math.random() * featureImages.length);
     return featureImages[randomIndex];
@@ -22,10 +24,13 @@ const Home: React.FC = () => {
     target.src = "https://placehold.co/600x400/e5e5e5/a3a3a3?text=Loading+Error";
   };
 
+  // Standardized link style
+  const linkClass = "decoration-stone-300/60 underline hover:decoration-gold-500 text-charcoal hover:text-gold-500 transition-all duration-300 underline-offset-4";
+
   return (
     <div className="flex flex-col justify-between animate-fade-in pt-8 lg:pt-16">
       
-      <div className="max-w-5xl mx-auto w-full flex flex-col md:flex-row gap-12 lg:gap-20 items-start mb-12 px-6 md:px-0">
+      <div className="max-w-5xl mx-auto w-full flex flex-col md:flex-row gap-12 lg:gap-20 items-start mb-8 px-6 md:px-0">
         
         {/* Left Column: Avatar & Contact */}
         <div className="w-full md:w-1/3 flex flex-col items-center md:items-start space-y-6 shrink-0">
@@ -76,18 +81,19 @@ const Home: React.FC = () => {
         <div className="w-full md:w-2/3 space-y-8 md:pt-1">
           
           <div>
-            <h1 className="font-sans text-xs font-bold text-academic-red uppercase tracking-[0.25em] mb-5 ml-1">
-              About
+            <h1 className="font-sans text-sm font-bold text-academic-red uppercase tracking-[0.25em] mb-5 ml-1">
+              Welcome
             </h1>
             
-            <h2 className="font-serif text-3xl md:text-4xl leading-tight text-charcoal font-medium mb-6">
-              I am a Research Associate at <a href="https://fsi.stanford.edu/" target="_blank" rel="noopener noreferrer" className="decoration-stone-300/60 underline hover:decoration-gold-500 text-charcoal hover:text-gold-500 transition-all duration-300 underline-offset-4">
+            <h2 className="font-helvetica text-2xl md:text-2xl leading-tight text-charcoal font-medium mb-6">
+              I am Gepeng Ding (丁歌鹏), a Research Associate at <a href="https://fsi.stanford.edu/" target="_blank" rel="noopener noreferrer" className={linkClass}>
                 Stanford FSI
               </a>.
             </h2>
           </div>
           
-          <div className="font-serif text-lg md:text-xl text-stone-600 leading-relaxed space-y-6 text-justify opacity-90">
+          {/* Research Intro - Helvetica font */}
+          <div className="font-helvetica text-lg md:text-xl text-gray-800 leading-relaxed space-y-6 text-justify">
             <p>
               My research examines how subnational institutions and state capital shape technological innovation and entrepreneurial finance.
             </p>
@@ -96,12 +102,24 @@ const Home: React.FC = () => {
             </p>
           </div>
 
-          <div className="pt-8 flex items-center gap-3">
+        </div>
+      </div>
+
+      {/* Bio Section - Full Width */}
+      <div className="max-w-5xl mx-auto w-full px-6 md:px-0 mb-12">
+         {/* Metadata separator - Centered */}
+         <div className="flex items-center justify-center gap-3 mb-6 mt-2">
              <div className="h-px w-12 bg-stone-300"></div>
              <span className="font-sans text-[10px] font-semibold text-stone-400 uppercase tracking-widest">Based in Stanford, CA</span>
+             <div className="h-px w-12 bg-stone-300"></div>
           </div>
 
-        </div>
+          {/* Personal Bio - Helvetica font */}
+          <div className="font-helvetica font-light text-lg md:text-xl text-gray-800 leading-relaxed space-y-6 text-justify">
+             <p>
+                My hometown is <a href="https://en.wikipedia.org/wiki/Lanzhou" target="_blank" rel="noopener noreferrer" className={linkClass}>Lanzhou</a>, China, where I spent my first eighteen years. Before coming to Stanford, I studied Astrophysics and Politics at UC Santa Cruz. I enjoy playing grand strategy games such as <a href="https://www.paradoxinteractive.com/games/victoria-3/about" target="_blank" rel="noopener noreferrer" className={linkClass}>Victoria 3</a>, practicing photography and mixology, and exploring unfamiliar cities with no set itinerary.
+             </p>
+          </div>
       </div>
 
       {/* Featured Single Image (Changes on Load) */}

@@ -13,7 +13,7 @@ const CV: React.FC = () => {
       <header className="mb-8 flex items-end justify-between">
         <div>
             <h2 className="font-serif text-4xl md:text-5xl text-charcoal mb-2">Curriculum Vitae</h2>
-            <p className="font-sans text-stone-400 text-sm uppercase tracking-widest">
+            <p className="font-helvetica text-stone-400 text-sm uppercase tracking-widest">
               Academic History & Experience
             </p>
         </div>
@@ -21,7 +21,7 @@ const CV: React.FC = () => {
             href={cvUrl.replace('/preview', '/view')} // Converts preview link to view/download link for the button
             target="_blank" 
             rel="noopener noreferrer"
-            className="group flex items-center gap-2 font-sans text-xs font-bold text-academic-red uppercase tracking-widest hover:text-gold-500 transition-colors border border-academic-red/30 hover:border-gold-500/50 px-4 py-2 rounded-sm"
+            className="group flex items-center gap-2 font-helvetica text-xs font-bold text-academic-red uppercase tracking-widest hover:text-gold-500 transition-colors border border-academic-red/30 hover:border-gold-500/50 px-4 py-2 rounded-sm"
         >
             <Download size={14} className="group-hover:-translate-y-0.5 transition-transform duration-300" />
             Download PDF
@@ -35,14 +35,14 @@ const CV: React.FC = () => {
             title="Gepeng Ding CV"
             loading="lazy"
         >
-            <p className="p-10 text-center text-stone-500">
+            <p className="p-10 text-center text-stone-500 font-helvetica">
                 Your browser does not support PDFs. 
                 <a href={cvUrl} className="text-academic-red underline">Download the PDF</a> to view it.
             </p>
         </iframe>
       </div>
       
-      <p className="mt-4 text-center font-sans text-[10px] text-stone-400 uppercase tracking-widest">
+      <p className="mt-4 text-center font-helvetica text-[10px] text-stone-400 uppercase tracking-widest">
         Last updated: {new Date().toLocaleString('default', { month: 'long', year: 'numeric' })}
       </p>
     </div>
