@@ -1,22 +1,26 @@
 import React, { useMemo } from 'react';
 import { Linkedin, Mail, Github } from 'lucide-react';
 
-// Curated list of stable Unsplash images for the daily feature
-// Focusing on atmospheric, academic, and minimalist textures
+// Feature image from Google Drive
+// Using the thumbnail endpoint (sz=w2560 asks for a high-res version) is more reliable for hotlinking than export=view
 const featureImages = [
-  { url: 'https://images.unsplash.com/photo-1480796927426-f609979314bd?auto=format&fit=crop&w=1600&q=80', caption: 'Structural Silence, Tokyo' },
-  { url: 'https://images.unsplash.com/photo-1444723121867-c630b7381919?auto=format&fit=crop&w=1600&q=80', caption: 'Morning Fog, Mountains' },
-  { url: 'https://images.unsplash.com/photo-1516528387618-afa90b13e000?auto=format&fit=crop&w=1600&q=80', caption: 'Archives of Light' },
-  { url: 'https://images.unsplash.com/photo-1507643179173-3963cc864297?auto=format&fit=crop&w=1600&q=80', caption: 'Interior Shadows' },
-  { url: 'https://images.unsplash.com/photo-1494438639946-1ebd1d20bf85?auto=format&fit=crop&w=1600&q=80', caption: 'Minimal Texture Study' },
+  { url: 'https://drive.google.com/thumbnail?id=1cVz-3GXh1Sp3r3zNWF8W-sQoAlcTJfPG&sz=w2560', caption: 'Featured Work' },
 ];
 
 const Home: React.FC = () => {
-  // Select one image randomly upon component mount
+  // Select one image (deterministic since we only have one now)
   const dailyImage = useMemo(() => {
     const randomIndex = Math.floor(Math.random() * featureImages.length);
     return featureImages[randomIndex];
   }, []);
+
+  const handleImageError = (e: React.SyntheticEvent<HTMLImageElement, Event>) => {
+    const target = e.currentTarget;
+    // Prevent infinite error loop
+    target.onerror = null; 
+    console.warn(`Failed to load image: ${target.src}. Check Google Drive permissions.`);
+    target.src = "https://placehold.co/600x400/e5e5e5/a3a3a3?text=Loading+Error";
+  };
 
   return (
     <div className="flex flex-col justify-between animate-fade-in pt-8 lg:pt-16">
@@ -31,9 +35,10 @@ const Home: React.FC = () => {
             <div className="absolute top-3 -left-3 w-full h-full border-2 border-stone-200 rounded-sm -z-10 group-hover:top-2 group-hover:-left-2 transition-all duration-500"></div>
             
             <img 
-              src="/me.jpg"
+              src="https://drive.google.com/thumbnail?id=1kYinauduIItf6hTxABNFkm5Nt-8qV2jw&sz=w1000"
               alt="Gepeng Ding" 
-              className="relative w-full h-auto aspect-[3/4] object-cover rounded-sm shadow-md hover:shadow-lg transition-all duration-500 ease-out grayscale-[15%] hover:grayscale-0"
+              onError={handleImageError}
+              className="relative w-full h-auto aspect-[3/4] object-cover rounded-sm shadow-md hover:shadow-lg transition-all duration-500 ease-out grayscale-[15%] hover:grayscale-0 bg-stone-200"
             />
           </div>
           
@@ -105,6 +110,7 @@ const Home: React.FC = () => {
             <img 
               src={dailyImage.url} 
               alt={dailyImage.caption}
+              onError={handleImageError}
               className="w-full h-full object-cover grayscale opacity-90 group-hover:grayscale-0 group-hover:opacity-100 transition-all duration-[1500ms] ease-out"
             />
             

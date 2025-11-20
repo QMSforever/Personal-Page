@@ -1,4 +1,4 @@
-import React from 'react';
+import React, { useMemo } from 'react';
 import { ResearchPaper } from '../types';
 import { FileText, ArrowUpRight } from 'lucide-react';
 

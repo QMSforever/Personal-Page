@@ -2,15 +2,14 @@ import React from 'react';
 import { PhotoItem } from '../types';
 
 const photos: PhotoItem[] = [
-  { id: '1', url: 'https://images.unsplash.com/photo-1444723121867-c630b7381919?auto=format&fit=crop&w=800&q=80', title: 'Silence in Noise', aspect: 'landscape' },
-  { id: '2', url: 'https://images.unsplash.com/photo-1486312338219-ce68d2c6f44d?auto=format&fit=crop&w=800&q=80', title: 'Urban Decay', aspect: 'portrait' },
-  { id: '3', url: 'https://images.unsplash.com/photo-1470723710355-171b443ad858?auto=format&fit=crop&w=800&q=80', title: 'Morning Fog', aspect: 'portrait' },
-  { id: '4', url: 'https://images.unsplash.com/photo-1466853817435-05b43fe45b39?auto=format&fit=crop&w=800&q=80', title: 'Structure', aspect: 'landscape' },
-  { id: '5', url: 'https://images.unsplash.com/photo-1534528741775-53994a69daeb?auto=format&fit=crop&w=800&q=80', title: 'Portrait of A.', aspect: 'portrait' },
-  { id: '6', url: 'https://images.unsplash.com/photo-1516528387618-afa90b13e000?auto=format&fit=crop&w=800&q=80', title: 'Texture study', aspect: 'portrait' },
+  { id: '1', url: 'https://drive.google.com/thumbnail?id=1K2d4SQk92XvBniFpgBtZ0j4ROt0FJJef&sz=w2560', title: 'Portfolio', aspect: 'landscape' },
 ];
 
 const Photography: React.FC = () => {
+  const handleImageError = (e: React.SyntheticEvent<HTMLImageElement, Event>) => {
+    e.currentTarget.src = "https://placehold.co/600x400/e5e5e5/a3a3a3?text=Image+Not+Found";
+  };
+
   return (
     <div className="max-w-4xl mx-auto py-8 px-4 animate-fade-in">
        <header className="mb-12 flex flex-col md:flex-row md:items-end justify-between gap-6">
@@ -32,6 +31,7 @@ const Photography: React.FC = () => {
               <img 
                 src={photo.url} 
                 alt={photo.title}
+                onError={handleImageError}
                 className="absolute inset-0 w-full h-full object-cover grayscale-[20%] hover:grayscale-0 hover:scale-[1.05] transition-all duration-700 ease-out"
                 loading="lazy"
               />
