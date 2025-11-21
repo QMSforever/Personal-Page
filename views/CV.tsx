@@ -12,10 +12,7 @@ const CV: React.FC = () => {
     <div className="max-w-5xl mx-auto animate-fade-in h-[calc(100vh-240px)] flex flex-col">
       <header className="mb-8 flex items-end justify-between">
         <div>
-            <h2 className="font-serif text-4xl md:text-5xl text-charcoal mb-2">Curriculum Vitae</h2>
-            <p className="font-helvetica text-stone-400 text-sm uppercase tracking-widest">
-              Academic History & Experience
-            </p>
+            <h2 className="font-helvetica font-light text-4xl md:text-5xl text-charcoal mb-2">Curriculum Vitae</h2>
         </div>
         <a 
             href={cvUrl.replace('/preview', '/view')} // Converts preview link to view/download link for the button

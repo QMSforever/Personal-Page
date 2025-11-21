@@ -68,13 +68,14 @@ const Research: React.FC = () => {
   return (
     <div className="max-w-4xl mx-auto animate-fade-in pb-12">
       <header className="mb-16">
-        <div className="w-12 h-1 bg-academic-red mb-8"></div>
-        <h2 className="font-serif text-5xl md:text-6xl text-charcoal mb-6">Research</h2>
+        {/* Removed red bar, Font updated to Helvetica to match Home body */}
+        <h2 className="font-helvetica font-light text-4xl md:text-5xl text-charcoal mb-6">Research</h2>
       </header>
 
       {/* Articles Section */}
       <section className="mb-24">
-        <h3 className="font-serif text-4xl text-charcoal mb-12 flex items-center gap-4">
+        {/* Subsection title updated: text-stone-600 for better visibility */}
+        <h3 className="font-helvetica font-medium text-sm md:text-base uppercase tracking-[0.2em] text-stone-600 mb-12 flex items-center gap-4 border-b border-stone-200 pb-4">
           Articles
         </h3>
         <div className="space-y-16">
@@ -84,7 +85,8 @@ const Research: React.FC = () => {
 
       {/* Working Papers Section */}
       <section className="mb-12">
-        <h3 className="font-serif text-4xl text-charcoal mb-12">
+         {/* Subsection title updated: text-stone-600 */}
+        <h3 className="font-helvetica font-medium text-sm md:text-base uppercase tracking-[0.2em] text-stone-600 mb-12 border-b border-stone-200 pb-4">
           Working Papers
         </h3>
         <div className="space-y-16">
