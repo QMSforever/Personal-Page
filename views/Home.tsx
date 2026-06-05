@@ -1,12 +1,12 @@
-import React, { useMemo } from 'react';
+import React, { useState } from 'react';
 import { Linkedin, Mail, Github } from 'lucide-react';
 import { featureImages, profile } from '../data/site';
 
 const Home: React.FC = () => {
-  const dailyImage = useMemo(() => {
-    const dayIndex = Math.floor(Date.now() / 86_400_000);
-    return featureImages[dayIndex % featureImages.length];
-  }, []);
+  const [featuredImage] = useState(() => {
+    const randomIndex = Math.floor(Math.random() * featureImages.length);
+    return featureImages[randomIndex];
+  });
 
   const handleImageError = (e: React.SyntheticEvent<HTMLImageElement, Event>) => {
     const target = e.currentTarget;
@@ -115,8 +115,8 @@ const Home: React.FC = () => {
       <div className="w-full max-w-5xl mx-auto px-6 md:px-0 mt-8 mb-8">
          <div className="relative w-full aspect-[21/9] md:aspect-[2.5/1] overflow-hidden rounded-sm bg-stone-200 group cursor-default">
             <img 
-              src={dailyImage.url} 
-              alt={dailyImage.caption}
+              src={featuredImage.url} 
+              alt={featuredImage.caption}
               onError={handleImageError}
               className="w-full h-full object-cover grayscale opacity-90 group-hover:grayscale-0 group-hover:opacity-100 transition-all duration-[1500ms] ease-out"
             />
@@ -127,7 +127,7 @@ const Home: React.FC = () => {
             {/* Caption on Hover */}
             <div className="absolute bottom-4 right-4 opacity-0 group-hover:opacity-100 transition-opacity duration-700 delay-150">
               <span className="font-serif text-white/90 text-sm md:text-lg italic tracking-wide drop-shadow-md bg-black/20 backdrop-blur-sm px-3 py-1 rounded-sm">
-                {dailyImage.caption}
+                {featuredImage.caption}
               </span>
             </div>
          </div>
