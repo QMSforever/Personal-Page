@@ -1,30 +1,7 @@
 import React from 'react';
-import { ResearchPaper } from '../types';
 import { FileText, ArrowUpRight } from 'lucide-react';
-
-const articles: ResearchPaper[] = [
-  {
-    id: '1',
-    title: "Restructuring for Credit: The Political Economy of Debt Crisis in China",
-    authors: "Gepeng Ding",
-    conference: "Master’s Thesis at Stanford CEAS",
-    year: 2025,
-    abstract: "",
-    link: "https://purl.stanford.edu/js084fx2027"
-  }
-];
-
-const workingPapers: ResearchPaper[] = [
-  {
-    id: 'wp1',
-    title: "China’s New VCs: Transformation of Local Government Financing Vehicles",
-    authors: "with Jean Oi",
-    conference: "Working Paper",
-    year: 2025,
-    abstract: "",
-    link: ""
-  }
-];
+import { ResearchPaper } from '../types';
+import { articles, workingPapers } from '../data/site';
 
 const Research: React.FC = () => {
   const renderPaper = (paper: ResearchPaper) => {

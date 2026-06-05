@@ -1,27 +1,16 @@
 import React, { useMemo } from 'react';
 import { Linkedin, Mail, Github } from 'lucide-react';
-
-// Feature image from Google Drive
-// Using the thumbnail endpoint (sz=w2560 asks for a high-res version) is more reliable for hotlinking than export=view
-const featureImages = [
-  { url: 'https://drive.google.com/thumbnail?id=1cVz-3GXh1Sp3r3zNWF8W-sQoAlcTJfPG&sz=w2560', caption: 'Perú' },
-  { url: 'https://drive.google.com/thumbnail?id=1TKcmCYOPsAnHbNnQrj6LjHpGdeWIluO3&sz=w2560', caption: 'Iceland' },
-  { url: 'https://drive.google.com/thumbnail?id=1_sChJsNfKnvu_JomHmmJLohNecKk2BqR&sz=w2560', caption: 'Santa Cruz' },
-];
+import { featureImages, profile } from '../data/site';
 
 const Home: React.FC = () => {
-  // Select one image (deterministic for the session)
   const dailyImage = useMemo(() => {
-    const randomIndex = Math.floor(Math.random() * featureImages.length);
-    return featureImages[randomIndex];
+    const dayIndex = Math.floor(Date.now() / 86_400_000);
+    return featureImages[dayIndex % featureImages.length];
   }, []);
 
   const handleImageError = (e: React.SyntheticEvent<HTMLImageElement, Event>) => {
     const target = e.currentTarget;
-    // Prevent infinite error loop
-    target.onerror = null; 
-    console.warn(`Failed to load image: ${target.src}. Check Google Drive permissions.`);
-    target.src = "https://placehold.co/600x400/e5e5e5/a3a3a3?text=Loading+Error";
+    target.style.display = 'none';
   };
 
   // Standardized link style
@@ -40,7 +29,7 @@ const Home: React.FC = () => {
             <div className="absolute top-3 -left-3 w-full h-full border-2 border-stone-200 rounded-sm -z-10 group-hover:top-2 group-hover:-left-2 transition-all duration-500"></div>
             
             <img 
-              src="https://drive.google.com/thumbnail?id=1j3DZWbPbqJ_cxUSKTuCaF0Njf86C6H2y&sz=w1000"
+              src={profile.image}
               alt="Gepeng Ding" 
               onError={handleImageError}
               className="relative w-full h-auto aspect-[3/4] object-cover rounded-sm shadow-md hover:shadow-lg transition-all duration-500 ease-out grayscale-[15%] hover:grayscale-0 bg-stone-200"
@@ -50,7 +39,7 @@ const Home: React.FC = () => {
           {/* Social Icons */}
           <div className="flex items-center space-x-6 pt-4 pl-1">
             <a 
-              href="https://github.com/QMSforever" 
+              href={profile.github} 
               target="_blank" 
               rel="noopener noreferrer" 
               className="text-stone-400 hover:text-gold-500 hover:scale-110 transition-all duration-300"
@@ -59,7 +48,7 @@ const Home: React.FC = () => {
               <Github size={22} strokeWidth={1.5} />
             </a>
             <a 
-              href="https://www.linkedin.com/in/gp714/" 
+              href={profile.linkedin} 
               target="_blank" 
               rel="noopener noreferrer" 
               className="text-stone-400 hover:text-gold-500 hover:scale-110 transition-all duration-300"
@@ -68,7 +57,7 @@ const Home: React.FC = () => {
               <Linkedin size={22} strokeWidth={1.5} />
             </a>
             <a 
-              href="mailto:gepengd@stanford.edu" 
+              href={`mailto:${profile.email}`} 
               className="text-stone-400 hover:text-gold-500 hover:scale-110 transition-all duration-300"
               aria-label="Email"
             >
@@ -93,7 +82,7 @@ const Home: React.FC = () => {
           </div>
           
           {/* Research Intro - Helvetica font */}
-          <div className="font-helvetica text-lg md:text-xl text-gray-800 leading-relaxed space-y-6 text-justify">
+          <div className="font-helvetica text-lg md:text-xl text-gray-800 leading-relaxed space-y-6 text-left md:text-justify">
             <p>
               My research examines how subnational institutions and state capital shape technological innovation and entrepreneurial finance.
             </p>
@@ -115,7 +104,7 @@ const Home: React.FC = () => {
           </div>
 
           {/* Personal Bio - Helvetica font */}
-          <div className="font-helvetica font-light text-lg md:text-xl text-gray-800 leading-relaxed space-y-6 text-justify">
+          <div className="font-helvetica font-light text-lg md:text-xl text-gray-800 leading-relaxed space-y-6 text-left md:text-justify">
              <p>
                 My hometown is <a href="https://en.wikipedia.org/wiki/Lanzhou" target="_blank" rel="noopener noreferrer" className={linkClass}>Lanzhou</a>, China, where I spent my first eighteen years. Prior to my journey at Stanford, I completed my undergraduate studies in Astrophysics and Politics at UC Santa Cruz. Outside of academics, I enjoy video games, especially grand strategy games such as <a href="https://www.paradoxinteractive.com/games/victoria-3/about" target="_blank" rel="noopener noreferrer" className={linkClass}>Victoria 3</a>, practicing photography and mixology, and exploring unfamiliar cities with no set itinerary.
              </p>

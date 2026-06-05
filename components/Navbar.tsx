@@ -74,6 +74,7 @@ const Navbar: React.FC<NavbarProps> = ({ activeSection, onNavigate }) => {
           <button 
             className="md:hidden z-50 text-white/90 hover:text-white transition-colors p-2"
             onClick={() => setIsMobileMenuOpen(!isMobileMenuOpen)}
+            aria-label={isMobileMenuOpen ? 'Close navigation menu' : 'Open navigation menu'}
           >
             {isMobileMenuOpen ? <X size={24} /> : <Menu size={24} />}
           </button>

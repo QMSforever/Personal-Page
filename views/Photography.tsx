@@ -1,13 +1,9 @@
 import React from 'react';
-import { PhotoItem } from '../types';
-
-const photos: PhotoItem[] = [
-  { id: '1', url: 'https://drive.google.com/thumbnail?id=1K2d4SQk92XvBniFpgBtZ0j4ROt0FJJef&sz=w2560', title: 'Portfolio', aspect: 'landscape' },
-];
+import { photos } from '../data/site';
 
 const Photography: React.FC = () => {
   const handleImageError = (e: React.SyntheticEvent<HTMLImageElement, Event>) => {
-    e.currentTarget.src = "https://placehold.co/600x400/e5e5e5/a3a3a3?text=Image+Not+Found";
+    e.currentTarget.style.display = 'none';
   };
 
   return (
@@ -38,12 +34,6 @@ const Photography: React.FC = () => {
             {/* Removed labels below image */}
           </div>
         ))}
-      </div>
-      
-      <div className="mt-24 flex justify-center">
-          <button className="font-helvetica text-xs uppercase tracking-widest text-stone-400 hover:text-gold-500 transition-colors">
-            View Archive
-          </button>
       </div>
     </div>
   );
