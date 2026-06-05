@@ -12,7 +12,7 @@ const Blog: React.FC = () => {
 
       <div className="min-h-[40vh] flex items-start">
         <p className="font-helvetica text-xl text-stone-500 leading-relaxed max-w-2xl">
-          Notes on research, data, and travel are being edited.
+          Notes on observation and research are being edited.
         </p>
       </div>
     </div>
