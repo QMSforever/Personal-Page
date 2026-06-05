@@ -10,7 +10,7 @@ const Footer: React.FC = () => {
         <p className="text-[10px] font-sans text-stone-300 uppercase tracking-[0.2em]">
           © {new Date().getFullYear()} Gepeng Ding
           <span className="mx-2 text-stone-300/70" aria-hidden="true">/</span>
-          <span>Powered Codex</span>
+          <span>Powered By Codex</span>
         </p>
       </div>
     </footer>
