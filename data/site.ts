@@ -62,14 +62,16 @@ export const cv = {
     {
       title: 'Research Areas',
       items: [
-        'Subnational institutions and state capital',
-        'Local government financing vehicles and state-backed venture capital',
+        'Political Economy of Development',
         'Entrepreneurial finance, innovation, and Chinese political economy',
       ],
     },
     {
       title: 'Education',
-      items: ['Stanford University, CEAS', 'University of California, Santa Cruz, Astrophysics and Politics'],
+      items: [
+        'Stanford University, East Asian Studies (2025)',
+        'University of California, Santa Cruz, Astrophysics and Politics (2022)',
+      ],
     },
   ],
 };
